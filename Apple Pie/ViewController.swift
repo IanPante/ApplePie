@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var correctWordLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
-    @IBOutlet weak var letterButtons: UIButton!
+    @IBOutlet var letterButtons: [UIButton]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         let letterString = sender.titleLabel!.text!
         let letter = Character(letterString.lowercased())
         currentGame.playerGuessed(letter: letter)
+        updateGameState()
     }
     
     func updateGameState() {
