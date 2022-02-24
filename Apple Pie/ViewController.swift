@@ -59,6 +59,7 @@ class ViewController: UIViewController {
         if !listOfWords.isEmpty {
             let newWord = listOfWords.removeFirst()
             currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed, guessedLetters: [])
+            enableLetterButtons(true)
             updateUI()
         } else {
             enableLetterButtons(false)
